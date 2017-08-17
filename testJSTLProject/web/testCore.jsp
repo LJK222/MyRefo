@@ -119,17 +119,21 @@
 	<h4>c:import : jsp include 지시자 또는 jsp:include 와 같은 기능을 하는 태그</h4>
 	<c:import url="testImport.jsp"/>
 	<hr>
-	<h4>c:catch : 자바의 try~catch 문과 같음</h4>
 	
-	<c:catch var="e">
-		<c:set var="num" value="null"/>
-		<c:set var="num3" value="77"/>
-		나눈 결과 : ${ num3 / num } <br>
-	</c:catch>
-	<c:if test='${ e != null }'>
-		에러 메세지 : ${e.message }<br>
+	c:redirect 페이지 이동
+	<c:set var="test" value="0"/>
+	<c:if test="${test eq 1}">
+	<c:redirect url="index.jsp"/>
 	</c:if>
-	
-	
+	<hr>
+	c:catch = try~catch
+	<c:catch var="c">
+	<c:set var="num11" value="null"/>
+	<c:set var="num12" value="77"/>
+	나눈 값 : ${num11/num12}
+	</c:catch>
+	<c:if test="${c!=null}">
+	에러 메세지 : ${c.message }<br>
+	</c:if> 
 </body>
 </html>
